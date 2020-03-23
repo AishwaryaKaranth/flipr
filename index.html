@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet"> 
+
+    <title>Home</title>
+  </head>
+  <style>
+    img{
+      width:6rem;
+      height:3rem;
+    }
+    nav.shift ul li a {
+  position:relative;
+  z-index: 1;
+}
+nav.shift ul li a:hover {
+  color: #91640F;
+}
+nav.shift ul li a:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 1px;
+  content: '.';
+  color: transparent;
+  background: #F1C40F;
+  visibility: none;
+  opacity: 0;
+  z-index: -1;
+}
+nav.shift ul li a:hover:after {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+}
+nav {
+  width: 80%;
+  margin: 0 auto;
+  background: #211f1f;
+  padding: s0px 0;
+  box-shadow: 0px 5px 0px #dedede;
+}
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: #aaa;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s;
+}
+nav ul li a:hover {
+  color: #555;
+}
+
+
+
+
+    .kontext {
+  width: 100%;
+  height: 100%;
+}
+
+.kontext .layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  /*box-shadow: 0px 0px 120px rgba( 0, 0, 0, 0.8 );*/
+}
+
+.kontext .layer.show {
+  visibility: visible;
+}
+
+.kontext.capable {
+  -webkit-perspective: 1000px;
+     -moz-perspective: 1000px;
+          perspective: 1000px;
+
+  -webkit-transform-style: preserve-3d;
+     -moz-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.kontext.capable .layer {
+  -webkit-transform: translateZ( -100px );
+     -moz-transform: translateZ( -100px );
+          transform: translateZ( -100px );
+}
+
+.kontext.capable .layer.show {
+  -webkit-transform: translateZ( 0px );
+     -moz-transform: translateZ( 0px );
+          transform: translateZ( 0px );
+}
+
+.kontext.capable.animate .layer.show.right {
+  -webkit-animation: show-right 1s forwards ease;
+     -moz-animation: show-right 1s forwards ease;
+          animation: show-right 1s forwards ease;
+}
+
+.kontext.capable.animate .layer.hide.right {
+  -webkit-animation: hide-right 1s forwards ease;
+     -moz-animation: hide-right 1s forwards ease;
+          animation: hide-right 1s forwards ease;
+}
+
+.kontext.capable.animate .layer.show.left {
+  -webkit-animation: show-left 1s forwards ease;
+     -moz-animation: show-left 1s forwards ease;
+          animation: show-left 1s forwards ease;
+}
+
+.kontext.capable.animate .layer.hide.left {
+  -webkit-animation: hide-left 1s forwards ease;
+     -moz-animation: hide-left 1s forwards ease;
+          animation: hide-left 1s forwards ease;
+}
+
+
+/* CSS animation keyframes */
+
+@-webkit-keyframes show-right {
+  0%   { -webkit-transform: translateZ( -200px ); }
+  40%  { -webkit-transform: translate( 40%, 0 ) scale( 0.8 ) rotateY( -20deg ); }
+  100% { -webkit-transform: translateZ( 0px ); }
+}
+
+@-webkit-keyframes hide-right {
+  0%   { -webkit-transform: translateZ( 0px ); visibility: visible; }
+  40%  { -webkit-transform: translate( -40%, 0 ) scale( 0.8 ) rotateY( 20deg ); }
+  100% { -webkit-transform: translateZ( -200px ); visibility: hidden; }
+}
+
+@-moz-keyframes show-right {
+  0%   { -moz-transform: translateZ( -200px ); }
+  40%  { -moz-transform: translate( 40%, 0 ) scale( 0.8 ) rotateY( -20deg ); }
+  100% { -moz-transform: translateZ( 0px ); }
+}
+
+@-moz-keyframes hide-right {
+  0%   { -moz-transform: translateZ( 0px ); visibility: visible; }
+  40%  { -moz-transform: translate( -40%, 0 ) scale( 0.8 ) rotateY( 20deg ); }
+  100% { -moz-transform: translateZ( -200px ); visibility: hidden; }
+}
+
+@keyframes show-right {
+  0%   { transform: translateZ( -200px ); }
+  40%  { transform: translate( 40%, 0 ) scale( 0.8 ) rotateY( -20deg ); }
+  100% { transform: translateZ( 0px ); }
+}
+
+@keyframes hide-right {
+  0%   { transform: translateZ( 0px ); visibility: visible; }
+  40%  { transform: translate( -40%, 0 ) scale( 0.8 ) rotateY( 20deg ); }
+  100% { transform: translateZ( -200px ); visibility: hidden; }
+}
+
+
+@-webkit-keyframes show-left {
+  0%   { -webkit-transform: translateZ( -200px ); }
+  40%  { -webkit-transform: translate( -40%, 0 ) scale( 0.8 ) rotateY( 20deg ); }
+  100% { -webkit-transform: translateZ( 0px ); }
+}
+
+@-webkit-keyframes hide-left {
+  0%   { -webkit-transform: translateZ( 0px ); visibility: visible; }
+  40%  { -webkit-transform: translate( 40%, 0 ) scale( 0.8 ) rotateY( -20deg ); }
+  100% { -webkit-transform: translateZ( -200px ); visibility: hidden; }
+}
+
+@-moz-keyframes show-left {
+  0%   { -moz-transform: translateZ( -200px ); }
+  40%  { -moz-transform: translate( -40%, 0 ) scale( 0.8 ) rotateY( 20deg ); }
+  100% { -moz-transform: translateZ( 0px ); }
+}
+
+@-moz-keyframes hide-left {
+  0%   { -moz-transform: translateZ( 0px ); visibility: visible; }
+  40%  { -moz-transform: translate( 40%, 0 ) scale( 0.8 ) rotateY( -20deg ); }
+  100% { -moz-transform: translateZ( -200px ); visibility: hidden; }
+}
+
+@keyframes show-left {
+  0%   { transform: translateZ( -200px ); }
+  40%  { transform: translate( -40%, 0 ) scale( 0.8 ) rotateY( 20deg ); }
+  100% { transform: translateZ( 0px ); }
+}
+
+@keyframes hide-left {
+  0%   { transform: translateZ( 0px ); visibility: visible; }
+  40%  { transform: translate( 40%, 0 ) scale( 0.8 ) rotateY( -20deg ); }
+  100% { transform: translateZ( -200px ); visibility: hidden; }
+}
+
+
+/* Dimmer */
+
+.kontext .layer .dimmer {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  background: transparent;
+}
+
+  .kontext.capable.animate .layer .dimmer {
+    -webkit-transition: background 1s ease;
+       -moz-transition: background 1s ease;
+            transition: background 1s ease;
+  }
+
+  .kontext.capable.animate .layer.hide .dimmer {
+    visibility: visible;
+    background: rgba( 0, 0, 0, 0.7 );
+  }
+
+
+
+
+/* Styles for the demo */
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  background-color: #222;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=);
+  background-repeat: repeat;
+
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  color: #fff;
+}
+
+.layer {
+  text-align: center;
+  text-shadow: 1px 1px 0px rgba( 0, 0, 0, 0.1 );
+}
+
+.layer h2 {
+  position: relative;
+  top: 20%;
+  margin: 0;
+  font-size: 6.25em;
+}
+
+.layer p {
+  position: relative;
+  top: 24%;
+  margin: 0;
+  font-size:2.5rem;
+  font-weight:bolder;
+  line-height:47px;
+}
+
+.layer.one {
+  background-image: url(bg1.jpg);
+}
+
+.layer.two {
+  background-image: url(bg1.jpg);
+}
+
+.layer.three {
+  background-image: url(bg1.jpg);
+}
+.layer.four {
+  background-image: url(bg1.jpg);
+}
+.layer.five{
+  background-image: url(bg1.jpg);
+}
+.layer.six {
+  background-image: url(bg1.jpg);
+}
+.layer.seven {
+  background-image: url(bg1.jpg);
+}
+.bullets {
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+  .bullets li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 3px;
+
+    background: rgba( 255, 255, 255, 0.5 );
+    box-shadow: 0px 0px 4px rgba( 0, 0, 0, 0.2 );
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: rgba( 0, 0, 0, 0 );
+  }
+
+    .bullets li:hover {
+      background: rgba( 255, 255, 255, 0.8 );
+    }
+
+    .bullets li.active {
+      cursor: default;
+      background: #fff;
+    }
+h1{
+  text-align:center;
+  font-size:5rem;
+  font-family:'Righteous',cursive;
+}
+h3{
+  letter-spacing:0.437em;
+  line-height:0.8;
+  position: relative;
+  top:-35px;
+}
+h2{
+  letter-spacing: 0.184em;
+}
+@media screen and (max-width: 400px) {
+  body {
+    font-size: 12px;
+  }
+
+  .layer h2 {
+    font-size: 5em;
+  }
+
+  .bullets li {
+    margin: 0 6px;
+  }
+}
+
+
+  </style>
+  <body>
+    <h1></h1>
+    <nav class="shift">
+    <ul>
+      <a href="index.html"><img src="logo.jpg"></a>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="reach.html">Reach Us</a></li>
+    </ul>
+  </nav>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <article class="kontext">
+  <div class="layer one show">
+    <h1>We help exceptional companies grow from concept to IPO.</h1>
+    <p>100</p><br>
+    <p>companies funded</p><br><p>$3B Assets under management</p>
+    <!--<blockquote class="blockquote">
+  <p class="mb-0">The harder I work, the luckier I get.</p>
+  <footer class="blockquote-footer"> <cite title="Source Title">Samuel Goldwyn</cite></footer>
+</blockquote>-->
+  </div>
+  <div class="layer two">
+    <h2>Rivigo</h2>
+    <h3>Making logistics human</h3>
+    <p>"SAIF Partners is an exceptional partner to get on board. They are humble, helpful and bring a touch of magic with them!"</p><br>
+    <p>Deepak Garg-co-founder</p>
+  </div>
+  <div class="layer three">
+    <h2>Swiggy</h2>
+    <h3>Changing the way India eats</h3>
+    <p>"Working with SAIF has been a true delight, their conviction and relentless support has been a gamechanger"</p><br>
+    <p>Sriharsha Majety</p>
+  </div>
+  
+</article>
+
+<ul class="bullets"></ul>
+  </body>
+  <script type="text/javascript" src="index.js"></script>
+</html>
